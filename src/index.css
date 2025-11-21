@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-family-cormorant: "Cormorant Garamond", serif;
+  --font-family-darker-grotesque: "Darker Grotesque", sans-serif;
+  --font-family-poppins: "Poppins", sans-serif;
+  
+  --color-primary: #1A191A;
+  --color-secondary: #131313;
+  --color-accent: #3B6E54;
+  --color-text: #E9E8E8;
+  --color-body: #99a1af;
+  
+  --font-size-body: clamp(0.75rem, 1.5vw, 1rem);
+  --font-size-heading: clamp(1.75rem, 5vw, 3rem);
+  --font-size-subheading: clamp(1.125rem, 2.5vw, 1.5rem);
+  --font-size-nav: clamp(0.875rem, 2vw, 1.125rem);
+  --icon-size: clamp(1.25rem, 3vw, 1.75rem);
+  
+  --max-width-section: min(80vw, 1440px);
+}
+
+body {
+  font-family: theme(--font-family-poppins);
+}
+.x-scroll {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+  -webkit-overflow-scrolling: touch; 
+}
+
+.x-scroll::-webkit-scrollbar {
+  height: 6px;              /* Scrollbar height */
+}
+
+.x-scroll::-webkit-scrollbar-track {
+  background: #1a1a1a;       /* Track color */
+  border-radius: 10px;
+}
+
+.x-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-body);       /* Slider color */
+  border-radius: 10px;
+}
+
+.x-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--color-body);
+}
