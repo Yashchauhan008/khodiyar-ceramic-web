@@ -1,14 +1,11 @@
-import React, { useEffect, useState } from "react";
+// export default App;
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar";
 import ScrollToSection from "./components/ScrollToSection";
 import SplashScreen from "./components/SplashScreen";
 import Home from "./views/Home";
-import Company from "./views/Company";
-import Services from "./views/Services";
-import Contact from "./views/Contact";
-import About from "./views/About";
 import Usabout from "./views/Usabout";
 import Technology from "./views/Technology";
 import SocialBar from "./components/SocialBar";
@@ -16,12 +13,13 @@ import NotFound from "./views/NotFound";
 import Footer from "./components/Footer";
 import Export from "./views/Export";
 import CatalogueGrid from "./views/CatalogueGrid";
+import PageTransition from "./components/PageTransition"; // Import the new component
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" }); // Use instant to prevent scroll fighting during transition
   }, [pathname]);
 
   return null;
@@ -29,39 +27,81 @@ const ScrollToTop = () => {
 
 const App = () => {
   const [showSplash, setShowSplash] = useState(true);
+  const location = useLocation(); // Get location for AnimatePresence key
 
   return (
     <>
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {showSplash && (
-          <SplashScreen onComplete={() => setShowSplash(false)} />
+          <SplashScreen key="splash" onComplete={() => setShowSplash(false)} />
         )}
       </AnimatePresence>
 
       {!showSplash && (
-        <>
-          {/* Full background wrapper */}
-          <div style={{ minHeight: "100vh", scrollBehavior: "smooth" }} className="pt-19 bg-primary">
-            <Navbar />
-            <ScrollToTop />
-            <ScrollToSection />
+        <div className="min-h-screen bg-primary flex flex-col">
+          <Navbar />
+          <ScrollToTop />
+          <ScrollToSection />
 
-            <Routes>
-              <Route path="/" element={<Home />} />
-              {/* <Route path="/company" element={<Company />} /> */}
-              <Route path="/catalogue" element={<CatalogueGrid />} />
-              <Route path="/export" element={<Export />} />
-              {/* <Route path="/about" element={<About />} /> */}
-              <Route path="/about-us" element={<Usabout />} />
-              <Route path="/technology" element={<Technology />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-
-            <Footer />
+          {/* Main Content Wrapper */}
+          <div className="flex-grow pt-19">
+            <AnimatePresence mode="wait">
+              <Routes location={location} key={location.pathname}>
+                <Route 
+                  path="/" 
+                  element={
+                    <PageTransition>
+                      <Home />
+                    </PageTransition>
+                  } 
+                />
+                <Route 
+                  path="/catalogue" 
+                  element={
+                    <PageTransition>
+                      <CatalogueGrid />
+                    </PageTransition>
+                  } 
+                />
+                <Route 
+                  path="/export" 
+                  element={
+                    <PageTransition>
+                      <Export />
+                    </PageTransition>
+                  } 
+                />
+                <Route 
+                  path="/about-us" 
+                  element={
+                    <PageTransition>
+                      <Usabout />
+                    </PageTransition>
+                  } 
+                />
+                <Route 
+                  path="/technology" 
+                  element={
+                    <PageTransition>
+                      <Technology />
+                    </PageTransition>
+                  } 
+                />
+                <Route 
+                  path="*" 
+                  element={
+                    <PageTransition>
+                      <NotFound />
+                    </PageTransition>
+                  } 
+                />
+              </Routes>
+            </AnimatePresence>
           </div>
 
-          <SocialBar />
-        </>
+          <Footer />
+          {/* <SocialBar /> */}
+        </div>
       )}
     </>
   );

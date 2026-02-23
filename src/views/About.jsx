@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import "../index.css";
 import { useNavigate } from "react-router-dom";
 import home from '../assets/home-img.png'
+import RevealText from "../components/RevealText";
 
 const About = () => {
     const navigate = useNavigate();
@@ -125,8 +126,9 @@ const About = () => {
                         style={{fontSize: 'var(--font-size-heading)',fontFamily: 'var(--font-family-cormorant'}}
                         variants={textVariants}
                     >
-                        Breezo Group of Company <br />
-                        Where Innovation Meets Perfection
+                        <RevealText text="Breezo Group of Company Where Innovation Meets Perfection" />
+                        {/* Breezo Group of Company <br />
+                        Where Innovation Meets Perfection */}
                     </motion.h2>
 
                     <motion.div 

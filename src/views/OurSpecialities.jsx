@@ -1,11 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
-import O1 from "../components/O1";
-import O2 from "../components/O2";
-import O3 from "../components/O3";
-import O4 from "../components/O4";
-import O5 from "../components/O5";
-import O6 from "../components/O6";
+import O1 from "../ui/icons/O1";
+import O2 from "../ui/icons/O2";
+import O3 from "../ui/icons/O3";
+import O4 from "../ui/icons/O4";
+import O5 from "../ui/icons/O5";
+import O6 from "../ui/icons/O6";
+import RevealText from "../components/RevealText";
 
 const OurSpecialities = () => {
   const features = [
@@ -69,7 +70,8 @@ const OurSpecialities = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          The Breezo Difference
+          <RevealText text="The Breezo Difference" />
+          {/* The Breezo Difference */}
         </motion.h2>
       </div>
 

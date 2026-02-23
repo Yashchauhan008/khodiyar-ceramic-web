@@ -1,10 +1,8 @@
 import React from "react";
-import { FaInstagram, FaFacebookF, FaGlobe, FaEnvelope } from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
-import { Instagram } from "./Instagram";
-import { X } from "./X";
-import { Linkedin } from "./Linkedin";
-import { Facebook } from "./Facebook";
+import { Instagram } from "../ui/icons/Instagram";
+import { Linkedin } from "../ui/icons/Linkedin";
+import { Facebook } from "../ui/icons/Facebook";
 import footerImg from '../assets/footer.png';
 import logo from '../assets/logo.png';
 const Footer = () => {
@@ -105,7 +103,7 @@ const Footer = () => {
 
         {/* Bottom Text */}
         <div className="text-center text-gray-500 mt-8 sm:mt-10 text-[10px] sm:text-xs">
-          <p>© 2025 Breezo Group of Company | All rights reserved.</p>
+          <p>© 2025 Breezo Group of Company | All rights reserved | Developed and managed by <a href="https://beyondadtech.com" target="_blank" className="hover:text-red-500 transition-colors">Beyond AdTech</a>.</p>
         </div>
       </footer>
     </>

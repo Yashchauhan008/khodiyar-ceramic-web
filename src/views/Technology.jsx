@@ -1,10 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-import T1 from "../components/T1";
-import T2 from "../components/T2";
-import T3 from "../components/T3";
-import T4 from "../components/T4";
+import T1 from "../ui/icons/T1";
+import T2 from "../ui/icons/T2";
+import T3 from "../ui/icons/T3";
+import T4 from "../ui/icons/T4";
 import PageHero from "../components/PageHero";
+import RevealText from "../components/RevealText";
 
 const Technology = () => {
   const features = [
@@ -85,7 +86,7 @@ const Technology = () => {
               Innovation
             </p>
             <h2 className=" leading-tight font-bold" style={{fontSize: 'var(--font-size-heading)',fontFamily: 'var(--font-family-cormorant'}}>
-              We Commit to Innovation
+               <RevealText triggerOnScroll={false} text={"We Commit to Innovation"} />
             </h2>
             <p
               className="text-text font-semibold"
@@ -187,7 +188,7 @@ const Technology = () => {
           Crafted With Care
         </p>
             <h2 className=" leading-tight font-bold"style={{fontSize: 'var(--font-size-heading)',fontFamily: 'var(--font-family-cormorant'}}>
-              We Promise Quality
+               <RevealText text={"We Promise Quality"} />
             </h2>
             <p
               className="text-body  leading-relaxed mb-6 text-justify font-extralight"

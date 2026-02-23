@@ -10,6 +10,9 @@ const GlobalMap = () => {
   useLayoutEffect(() => {
     if (!mapRef.current) return;
     
+    // Clear any existing content
+    mapRef.current.innerHTML = '';
+    
     // Create root element
     const root = am5.Root.new(mapRef.current);
 
@@ -43,6 +46,15 @@ const GlobalMap = () => {
       stroke: am5.color("#4a5568"),
       strokeWidth: 0.5
     });
+
+    // Add hover animation
+    worldSeries.mapPolygons.template.states.create("hover", {
+      fill: am5.color("#4a5568"),
+      scale: 1.02
+    });
+
+    // Animate map appearance
+    worldSeries.appear(1000, 100);
 
     // Set map bounds to exclude Antarctica
     chart.set("homeZoomLevel", 1);
@@ -82,6 +94,25 @@ const GlobalMap = () => {
       strokeDasharray: [5, 3]
     });
 
+    // Add line animation using CSS-like animation
+    lineSeries.mapLines.template.set("strokeDashoffset", -15);
+    
+    // Create continuous dash animation
+    const animateDashes = () => {
+      lineSeries.mapLines.each((mapLine) => {
+        if (mapLine.get("strokeDashoffset") <= -30) {
+          mapLine.set("strokeDashoffset", 0);
+        } else {
+          mapLine.set("strokeDashoffset", mapLine.get("strokeDashoffset") - 0.5);
+        }
+      });
+      requestAnimationFrame(animateDashes);
+    };
+    
+    setTimeout(() => {
+      animateDashes();
+    }, 2000);
+
     // Export routes data (from India to various countries)
     const exportRoutes = [
       { from: "IN", to: "US" },
@@ -97,7 +128,7 @@ const GlobalMap = () => {
     ];
 
     // Add export routes with proper arc paths
-    exportRoutes.forEach(route => {
+    exportRoutes.forEach((route, index) => {
       const fromCoords = [77.2090, 28.6139]; // India coordinates (Delhi)
       const toCoords = getCountryCoordinates(route.to);
       
@@ -107,6 +138,13 @@ const GlobalMap = () => {
           coordinates: [fromCoords, toCoords]
         }
       });
+      
+      // Stagger line appearance
+      setTimeout(() => {
+        if (line.get("mapLine")) {
+          line.get("mapLine").appear(1000);
+        }
+      }, index * 200);
     });
 
     // Add point series for cities
@@ -115,26 +153,41 @@ const GlobalMap = () => {
     );
 
     pointSeries.bullets.push(() => {
+      const circle = am5.Circle.new(root, {
+        radius: 4,
+        fill: am5.color("#10b981"),
+        stroke: am5.color("#ffffff"),
+        strokeWidth: 2
+      });
+      
+      // Add pulsing animation
+      const pulseAnimation = circle.animate({
+        key: "radius",
+        to: 6,
+        duration: 1000,
+        easing: am5.ease.yoyo(am5.ease.cubic),
+        loops: Infinity
+      });
+      
       return am5.Bullet.new(root, {
-        sprite: am5.Circle.new(root, {
-          radius: 4,
-          fill: am5.color("#10b981"),
-          stroke: am5.color("#ffffff"),
-          strokeWidth: 2
-        })
+        sprite: circle
       });
     });
 
-    // Add India point
-    pointSeries.pushDataItem({
-      geometry: { type: "Point", coordinates: [77.2090, 28.6139] }
-    });
-
-    // Add destination points
-    exportRoutes.forEach(route => {
+    // Add India point with animation
+    setTimeout(() => {
       pointSeries.pushDataItem({
-        geometry: { type: "Point", coordinates: getCountryCoordinates(route.to) }
+        geometry: { type: "Point", coordinates: [77.2090, 28.6139] }
       });
+    }, 500);
+
+    // Add destination points with staggered animation
+    exportRoutes.forEach((route, index) => {
+      setTimeout(() => {
+        pointSeries.pushDataItem({
+          geometry: { type: "Point", coordinates: getCountryCoordinates(route.to) }
+        });
+      }, 1000 + (index * 150));
     });
 
     // Country coordinates helper function
@@ -154,8 +207,11 @@ const GlobalMap = () => {
       return coords[countryCode] || [0, 0];
     }
 
-    // Enable zoom and pan
-    chart.set("zoomControl", am5map.ZoomControl.new(root, {}));
+    // Disable zoom control (no plus/minus buttons)
+    // chart.set("zoomControl", am5map.ZoomControl.new(root, {}));
+    
+    // Animate chart appearance
+    chart.appear(1000, 100);
 
     return () => {
       if (root) {

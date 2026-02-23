@@ -1,9 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaUsers, FaBrain, FaThLarge, FaChartLine } from "react-icons/fa";
-import A1 from "./A1";
-import A2 from "./A2";
-import A3 from "./A3";
+import A1 from "../ui/icons/A1";
+import A2 from "../ui/icons/A2";
+import A3 from "../ui/icons/A3";
+import RevealText from "./RevealText";
 
 const Advantage = () => {
   const containerVariants = {
@@ -58,7 +58,8 @@ const Advantage = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          What Sets Us Apart ?
+          <RevealText text="What Sets Us Apart ?" />
+          {/* What Sets Us Apart ? */}
         </motion.h2>
 
         {/* Cards */}

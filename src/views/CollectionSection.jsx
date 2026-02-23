@@ -6,6 +6,7 @@ import img3 from '../assets/img3.png'
 import img4 from '../assets/img4.png'
 import img5 from '../assets/img5.png'
 import img6 from '../assets/psdmarchpang46 1.png'
+import RevealText from "../components/RevealText";
 
 const collections = [
   { id: 1, title: "Classic Collection", image: img4 },
@@ -68,8 +69,9 @@ const CollectionSection = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        Breezo - Experience a collection crafted with elegance, precision, and
-        timeless design.
+        <RevealText text="Breezo - Experience a collection crafted with elegance, precision, and timeless design." />
+        {/* Breezo - Experience a collection crafted with elegance, precision, and
+        timeless design. */}
       </motion.h2>
 
       {/* First Row - 2 Images */}

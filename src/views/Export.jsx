@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import E1 from "../components/E1";
-import E2 from "../components/E2";
-import E3 from "../components/E3";
-import E4 from "../components/E4";
-import E5 from "../components/E5";
-import E6 from "../components/E6";
+import E1 from "../ui/icons/E1";
+import E2 from "../ui/icons/E2";
+import E3 from "../ui/icons/E3";
+import E4 from "../ui/icons/E4";
+import E5 from "../ui/icons/E5";
+import E6 from "../ui/icons/E6";
 import PageHero from "../components/PageHero";
 import GlobalMap from "../components/GlobalMap";
 import expImg from "../assets/export-img.png";
+import RevealText from "../components/RevealText";
 const Export = () => {
   const features = [
     { icon: <E1 />, title: "Low Maintenance" },
@@ -158,8 +159,7 @@ const Export = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
-          Why import tiles from Breezo <br />
-          <span className="font-bold" style={{fontSize: 'var(--font-size-heading)',fontFamily: 'var(--font-family-cormorant'}}>Group of Company</span>
+          <RevealText triggerOnScroll={false} text={"Why import tiles from Breezo Group of Company"} />
         </motion.h2>
 
         <motion.div 
@@ -182,8 +182,8 @@ const Export = () => {
             >
               <motion.div 
                 className="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full"
-                whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.6 }}
+                whileHover={{ rotate: 5 }}
+              transition={{ type: "spring", stiffness: 300 }}
               >
                 {item.icon}
               </motion.div>
@@ -212,7 +212,7 @@ const Export = () => {
               Export Globally
             </p>
             <h2 className="mb-6 font-bold" style={{fontSize: 'var(--font-size-heading)',fontFamily: 'var(--font-family-cormorant'}}>
-              Export Globally
+               <RevealText triggerOnScroll={false} text={"Export Globally"} />
             </h2>
             <p
               className="text-sm sm:text-base text-body leading-relaxed tracking-wide text-justify lg:pr-25 font-extralight"
@@ -250,13 +250,13 @@ const Export = () => {
 
         {/* Packing Details Table */}
         <motion.div 
-          className="mt-12 sm:mt-16"
+          className="mt-16 sm:mt-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <h3 className="text-text mb-6 font-bold text-center" style={{fontSize: 'var(--font-size-heading)',fontFamily: 'var(--font-family-cormorant'}}>Porcelain Wooden Pallet Packing Details</h3>
+          <h3 className="text-text mb-6 font-bold text-center" style={{fontSize: 'var(--font-size-heading)',fontFamily: 'var(--font-family-cormorant'}}> Porcelain Wooden Pallet Packing Details</h3>
           
           <div 
             className="overflow-x-auto x-scroll"
@@ -557,7 +557,7 @@ const Export = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Global Footprint
+           <RevealText text={"Global Footprint"} />
         </motion.h2>
 
         <motion.div 
@@ -598,7 +598,7 @@ const Export = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Get In Touch
+           <RevealText text={"Get In Touch"} />
         </motion.h2>
 
         <motion.div 

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import About from "./About";
 import Advantage from "../components/Advantage";
 import CollectionSection from "./CollectionSection";
-import AvailableTileSizes from "./tile";
+import AvailableTileSizes from "./Tile";
 import OurSpecialities from "./OurSpecialities";
 import CompanyBanner from "./CompanyBanner";
 

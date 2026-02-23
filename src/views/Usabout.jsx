@@ -273,33 +273,21 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import C1 from "../components/C1";
-import C2 from "../components/C2";
-import C3 from "../components/C3";
 import PageHero from "../components/PageHero";
+import RevealText from "../components/RevealText";
+import AnimatedCounter from "../components/AnimatedCounter";
 import logo from '../assets/logo.png'
-import women from '../assets/woman-choosing-marble-tiles 1.png'
+import women from '../assets/about-1.jpg'
 import arrow from '../assets/Vector.svg'
-import modern from '../assets/luxurious-modern-entryway-with-sculpture-reflecting-pool 1.png'
+import modern from '../assets/about-2.jpg'
 import vision from '../assets/Group 136.png'
 import mission from '../assets/Group 135.png'
 import tileChart from '../assets/image 8.png'
 import innovation from '../assets/innovation.png'
 import quality from '../assets/quality.png'
 import value from '../assets/real value.png'
-import bg from '../assets/b2.png'
+import bg from '../assets/b2.png';
 const Usabout = () => {
-  const sectionVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut"
-      }
-    }
-  };
 
   return (
     <>
@@ -329,7 +317,8 @@ const Usabout = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              Breezo Group of Company
+              <RevealText triggerOnScroll={false} text={'Breezo Group Of Company'}/>
+              {/* Breezo Group of Company */}
             </motion.h2>
             <motion.p
               className=" text-body leading-relaxed tracking-wide text-justify font-extralight"
@@ -499,8 +488,8 @@ initial={{ opacity: 0, y: 50 }}
                 alt={`${item.title} Background`}
                 className="absolute right-6 bottom-2 w-28 sm:w-32 md:w-40 select-none opacity-60"
               />
-              <h3 className="font-bold mb-3 relative z-10"style={{fontSize: 'var(--font-size-heading)',fontFamily: 'var(--font-family-cormorant'}}>
-                {item.title}
+              <h3 className="font-bold mb-3 relative z-10" style={{fontSize: 'var(--font-size-heading)',fontFamily: 'var(--font-family-cormorant'}}>
+                <RevealText text={item.title} />
               </h3>
               <p className="text-body leading-snug text-sm md:text-base relative z-10 text-justify font-extralight" style={{fontSize: 'var(--font-size-body)'}}>
                 {item.text}
@@ -517,8 +506,9 @@ initial={{ opacity: 0, y: 50 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
         >
-          <h3 className=" font-bold mb-6"style={{fontSize: 'var(--font-size-heading)',fontFamily: 'var(--font-family-cormorant'}}>
-            Applications: Multipurpose Tiles
+          <h3 className=" font-bold mb-6" style={{fontSize: 'var(--font-size-heading)',fontFamily: 'var(--font-family-cormorant'}}>
+            <RevealText text={'Applications: Multipurpose Tiles'}/>
+            {/* Applications: Multipurpose Tiles */}
           </h3>
           <p className="text-body leading-relaxed mb-10 text-justify font-extralight" style={{fontSize: 'var(--font-size-body)'}}>
             Immense intricate details and expert craftsmanship replicate through
@@ -568,8 +558,9 @@ initial={{ opacity: 0, y: 50 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className=" mb-12 text-left font-bold"style={{fontSize: 'var(--font-size-heading)',fontFamily: 'var(--font-family-cormorant'}}>
-            Our Core Values
+          <h1 className=" mb-12 text-left font-bold" style={{fontSize: 'var(--font-size-heading)',fontFamily: 'var(--font-family-cormorant'}}>
+            
+            <RevealText text="Our Core Values" />
           </h1>
 
           <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-20">
@@ -625,17 +616,29 @@ initial={{ opacity: 0, y: 50 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           {[
-            ["15+", "Years of Experience"],
-            ["25+", "Countries We Export"],
-            ["30000+", "Box Productions"],
-            ["150+", "Attractive Designs"],
-          ].map(([num, text], i) => (
-            <div key={i} className=" mb-8 md:mb-0">
-              <p className="text-3xl md:text-4xl font-bold text-[#ff1f1f] mb-1">
-                {num}
-              </p>
+            ["15", "+", "Years of Experience"],
+            ["25", "+", "Countries We Export"],
+            ["30000", "+", "Box Productions"],
+            ["1500", "+", "Attractive Designs"],
+          ].map(([num, suffix, text], i) => (
+            <motion.div 
+              key={i} 
+              className="mb-8 md:mb-0"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+            >
+              <div className="text-3xl md:text-4xl font-bold text-red-500 mb-1">
+                <AnimatedCounter 
+                  end={num} 
+                  suffix={suffix} 
+                  duration={2.5}
+                  className="inline-block"
+                />
+              </div>
               <p className="font-bold" style={{fontSize: 'var(--font-size-subheading)',fontFamily: 'var(--font-family-cormorant'}}>{text}</p>
-            </div>
+            </motion.div>
           ))}
         </motion.div>
       </motion.section>
