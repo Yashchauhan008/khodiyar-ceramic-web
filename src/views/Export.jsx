@@ -159,7 +159,7 @@ const Export = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
-          <RevealText triggerOnScroll={false} text={"Why import tiles from Breezo Group of Company"} />
+          <RevealText triggerOnScroll={false} text={"Why import tiles from Khodiyar Ceramic"} />
         </motion.h2>
 
         <motion.div 
@@ -219,7 +219,7 @@ const Export = () => {
               style={{fontSize: 'var(--font-size-body)'}}
             >
               A strong and ever-growing customer base across multiple countries
-              has positioned Breezo Group of Companies as one of the leading
+              has positioned Khodiyar Ceramic The Group of Companies as one of the leading
               global exporters of premium tiles and ceramics.
             </p>
             <p
@@ -228,7 +228,7 @@ const Export = () => {
             >
               Our brand has become a synonym for innovation, superior quality,
               and unmatched service in both domestic and international markets.
-              With a clear vision to achieve global recognition, Breezo is
+              With a clear vision to achieve global recognition, K is
               continuously expanding its footprint to establish a solid presence
               worldwide.
             </p>

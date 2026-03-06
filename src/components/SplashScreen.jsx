@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import logo from '../assets/logo.png';
+import logo from '../assets/KClogo.png';
 
 const SplashScreen = ({ onComplete }) => {
   return (
@@ -73,7 +73,7 @@ const SplashScreen = ({ onComplete }) => {
           
           <motion.img
             src={logo}
-            alt="BREEZO"
+            alt="Khodiyar Ceramic"
             className="h-32 sm:h-40 w-auto relative z-10 drop-shadow-2xl"
             initial={{ filter: "brightness(0.5) blur(5px)" }}
             animate={{ filter: "brightness(1) blur(0px)" }}
@@ -95,7 +95,7 @@ const SplashScreen = ({ onComplete }) => {
             animate={{ letterSpacing: "0.2em", opacity: 1 }}
             transition={{ duration: 1.5, delay: 1.5 }}
           >
-            BREEZO
+            Khodiyar Ceramic
           </motion.h1>
           
           <motion.div

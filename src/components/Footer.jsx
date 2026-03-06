@@ -4,7 +4,7 @@ import { Instagram } from "../ui/icons/Instagram";
 import { Linkedin } from "../ui/icons/Linkedin";
 import { Facebook } from "../ui/icons/Facebook";
 import footerImg from '../assets/footer.png';
-import logo from '../assets/logo.png';
+import logo from '../assets/KClogo.png';
 const Footer = () => {
   return (
     <>
@@ -30,7 +30,7 @@ const Footer = () => {
           {/* Left - Logo & Socials */}
           <div className="flex flex-col items-center lg:items-start space-y-4 sm:space-y-6">
             <Link to="/">
-              <img src={logo} alt="BREEZO" className="h-12 sm:h-16 w-auto" />
+              <img src={logo} alt="Khodiyar Ceramic" className="h-12 sm:h-16 w-auto" />
             </Link>
 
             <div className="flex space-x-4 sm:space-x-6 text-white">
@@ -53,7 +53,7 @@ const Footer = () => {
             {/* Embedded Google Map */}
             <div className="bg-primary w-[220px] sm:w-[300px] md:w-[460px] lg:w-[490px] h-[150px] sm:h-[200px] md:h-[220px] rounded-md overflow-hidden shadow-md">
               <iframe
-                title="Breezo Location"
+                title="Khodiyar Ceramic Location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d790.3209686114794!2d70.85706057417057!3d22.845494080448937!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39598d004d22b7bb%3A0xbd4c1d2d06ef4eba!2sLatest%20business%20center!5e1!3m2!1sen!2sin!4v1763556105562!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
@@ -103,7 +103,7 @@ const Footer = () => {
 
         {/* Bottom Text */}
         <div className="text-center text-gray-500 mt-8 sm:mt-10 text-[10px] sm:text-xs">
-          <p>© 2025 Breezo Group of Company | All rights reserved | Developed and managed by <a href="https://beyondadtech.com" target="_blank" className="hover:text-red-500 transition-colors">Beyond AdTech</a>.</p>
+          <p>© 2025 Khodiyar Ceramic Group of Company | All rights reserved | Developed and managed by <a href="https://beyondadtech.com" target="_blank" className="hover:text-red-500 transition-colors">Beyond AdTech</a>.</p>
         </div>
       </footer>
     </>

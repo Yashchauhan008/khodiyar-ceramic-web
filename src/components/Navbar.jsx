@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
-import logo from "../assets/logo.png";
+import logo from "../assets/KClogo.png";
 import { catalogue } from "../utils/data.js";
 
 const Navbar = () => {
@@ -17,7 +17,7 @@ const Navbar = () => {
       <div className="flex justify-between items-center px-6 sm:px-10 md:px-20 lg:px-28 py-4">
         {/* Logo */}
         <Link to="/" onClick={closeMenu} className="flex items-center justify-center">
-          <img src={logo} alt="BREEZO" className="h-10 sm:h-12 w-auto" />
+          <img src={logo} alt="Khodiyar Ceramic" className="h-10 sm:h-12 w-auto" />
         </Link>
 
         {/* Desktop Links */}

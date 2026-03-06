@@ -69,7 +69,7 @@ const CollectionSection = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        <RevealText text="Breezo - Experience a collection crafted with elegance, precision, and timeless design." />
+        <RevealText text="Khodiyar Ceramic - Experience a collection crafted with elegance, precision, and timeless design." />
         {/* Breezo - Experience a collection crafted with elegance, precision, and
         timeless design. */}
       </motion.h2>

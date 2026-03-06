@@ -126,7 +126,7 @@ const About = () => {
                         style={{fontSize: 'var(--font-size-heading)',fontFamily: 'var(--font-family-cormorant'}}
                         variants={textVariants}
                     >
-                        <RevealText text="Breezo Group of Company Where Innovation Meets Perfection" />
+                        <RevealText text="Khodiyar Ceramic The Group of Company Where Innovation Meets Perfection" />
                         {/* Breezo Group of Company <br />
                         Where Innovation Meets Perfection */}
                     </motion.h2>
@@ -163,7 +163,7 @@ const About = () => {
                         style={{fontSize: 'var(--font-size-body)'}}
                         variants={textVariants}
                     >
-                        Breezo Group of Company stands tall among leading pioneers dedicated
+                        Khodiyar Group of Company stands tall among leading pioneers dedicated
                         to excellence, innovation, and design precision. We specialize in
                         curating a diverse range of premium products that blend aesthetic
                         brilliance with functional superiority, redefining the standards of

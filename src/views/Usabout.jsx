@@ -276,7 +276,7 @@ import { motion } from "framer-motion";
 import PageHero from "../components/PageHero";
 import RevealText from "../components/RevealText";
 import AnimatedCounter from "../components/AnimatedCounter";
-import logo from '../assets/logo.png'
+import logo from '../assets/KClogo.png'
 import women from '../assets/about-1.jpg'
 import arrow from '../assets/Vector.svg'
 import modern from '../assets/about-2.jpg'

@@ -96,7 +96,7 @@ const Advantage = () => {
               <p className="text-body leading-relaxed tracking-wide text-justify font-extralight"
                 style={{fontSize: 'var(--font-size-body)'}}>
                 With the trust of customers and consistent efforts towards
-                perfection, Breezo Ceramics is emerging as a hub of top-class
+                perfection, Khodiyar Ceramic is emerging as a hub of top-class
                 ceramic products that settle for nothing less than the BEST. Class
                 and luxury pinnacle is the gist of our affordable product range.
               </p>
