@@ -172,8 +172,7 @@ const Footer = () => {
                   className="font-extralight hover:text-accent transition-colors"
                   style={{ fontSize: "var(--font-size-body)" }}
                 >
-                  +91 98798 11122
-                </a>
+                  +91 9909841101                </a>
               </div>
             </div>
           </div>
