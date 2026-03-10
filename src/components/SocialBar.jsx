@@ -62,7 +62,7 @@ const SocialBar = () => {
 
       {/* WhatsApp */}
       <a
-        href="https://wa.me/919879811122?text=Hello%20BREEZO,%20I%20am%20interested%20in%20your%20products"
+        href="https://wa.me/9909841101?text=Hello%20BREEZO,%20I%20am%20interested%20in%20your%20products"
         target="_blank"
         rel="noopener noreferrer"
         className="bg-accent hover:bg-[#2d5a46] text-white p-2 rounded-tr-md rounded-br-md transition-all duration-300 flex items-center justify-center"

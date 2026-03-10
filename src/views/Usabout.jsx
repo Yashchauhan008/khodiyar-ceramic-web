@@ -317,8 +317,8 @@ const Usabout = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <RevealText triggerOnScroll={false} text={'Breezo Group Of Company'}/>
-              {/* Breezo Group of Company */}
+              <RevealText triggerOnScroll={false} text={'khodiyar ceramic Group Of Company'}/>
+              {/* khodiyar ceramic Group of Company */}
             </motion.h2>
             <motion.p
               className=" text-body leading-relaxed tracking-wide text-justify font-extralight"

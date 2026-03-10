@@ -127,7 +127,7 @@ const About = () => {
                         variants={textVariants}
                     >
                         <RevealText text="Khodiyar Ceramic The Group of Company Where Innovation Meets Perfection" />
-                        {/* Breezo Group of Company <br />
+                        {/* khodiyar ceramic Group of Company <br />
                         Where Innovation Meets Perfection */}
                     </motion.h2>
 
