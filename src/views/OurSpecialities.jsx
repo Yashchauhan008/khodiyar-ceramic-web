@@ -70,8 +70,8 @@ const OurSpecialities = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <RevealText text="The Breezo Difference" />
-          {/* The Breezo Difference */}
+          <RevealText text="The khodiyar ceramic Difference" />
+          {/* The khodiyar ceramic Difference */}
         </motion.h2>
       </div>
 

@@ -26,7 +26,7 @@ const Technology = () => {
     },
     {
       title: "Timeless Innovation",
-      desc: "Breezo embodies innovation, where technology meets timeless design.",
+      desc: "khodiyar ceramic embodies innovation, where technology meets timeless design.",
       icon: <T4 />,
     },
   ];
@@ -98,7 +98,7 @@ const Technology = () => {
               className="text-body font-extralight text-justify"
               style={{fontSize: 'var(--font-size-body)'}}
             >
-              At Breezo Group of Company, innovation isn't just a goal — it's a
+              At khodiyar ceramic Group of Company, innovation isn't just a goal — it's a
               continuous journey toward perfection. We redefine standards daily
               through cutting-edge technology, advanced research, and creative
               craftsmanship.
@@ -204,7 +204,7 @@ const Technology = () => {
               style={{fontSize: 'var(--font-size-body)'}}
             >
               With high-tech materials and precision engineering, we ensure that
-              every Breezo product delivers unmatched quality and durability.
+              every khodiyar ceramic product delivers unmatched quality and durability.
             </p>
           </motion.div>
           <motion.div 

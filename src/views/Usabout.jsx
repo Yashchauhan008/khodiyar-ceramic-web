@@ -342,7 +342,7 @@ const Usabout = () => {
           >
             <img
               src={logo}
-              alt="Breezo Logo"
+              alt="khodiyar ceramic Logo"
               className="w-40 sm:w-52 md:w-64 lg:w-80 pt-8 md:pt-12"
             />
           </motion.div>
@@ -375,7 +375,7 @@ initial={{ opacity: 0, y: 50 }}
               transition={{ duration: 0.6, delay: 0.4 }}
           >
             <h3 className=" mb-6 leading-relaxed tracking-wide font-bold" style={{fontSize: 'var(--font-size-subheading)',fontFamily: 'var(--font-family-cormorant'}}>
-              At Breezo, we blend artistry with engineering
+              At khodiyar ceramic, we blend artistry with engineering
             </h3>
             <ul
               className="space-y-6 sm:space-y-8"
@@ -427,7 +427,7 @@ initial={{ opacity: 0, y: 50 }}
               style={{fontSize: 'var(--font-size-body)'}}
             >
               {[
-                "Each Breezo tile adds a unique statement of style and sophistication to your space.",
+                "Each khodiyar ceramic tile adds a unique statement of style and sophistication to your space.",
                 "Designed to meet international standards of durability and aesthetics.",
                 "Built to withstand wear and tear while retaining their elegance over time.",
                 "Ideal for both modern homes and grand commercial environments.",
@@ -512,8 +512,8 @@ initial={{ opacity: 0, y: 50 }}
           </h3>
           <p className="text-body leading-relaxed mb-10 text-justify font-extralight" style={{fontSize: 'var(--font-size-body)'}}>
             Immense intricate details and expert craftsmanship replicate through
-            the Breezo tiling solutions. From bathrooms and kitchens to living
-            spaces and cladding, Breezo offers endless tile options — vibrant,
+            the khodiyar ceramic tiling solutions. From bathrooms and kitchens to living
+            spaces and cladding, khodiyar ceramic offers endless tile options — vibrant,
             durable, and designed to impress.
           </p>
 
